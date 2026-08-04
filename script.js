@@ -112,3 +112,89 @@ document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
 
 });
+
+/* ===========================================================
+   MOBILE MENU
+=========================================================== */
+
+
+function initMobileMenu(){
+
+
+    const burger = document.querySelector(".burger");
+
+    const menu = document.querySelector(".nav-links");
+
+    const links = document.querySelectorAll(".nav-links a");
+
+
+    if(!burger || !menu){
+
+        return;
+
+    }
+
+
+
+    burger.addEventListener("click", ()=>{
+
+
+        burger.classList.toggle("active");
+
+        menu.classList.toggle("active");
+
+
+    });
+
+
+
+    // закрытие после перехода по ссылке
+
+    links.forEach(link=>{
+
+
+        link.addEventListener("click", ()=>{
+
+
+            burger.classList.remove("active");
+
+            menu.classList.remove("active");
+
+
+        });
+
+
+    });
+
+
+
+    // закрытие при клике вне меню
+
+    document.addEventListener("click",(event)=>{
+
+
+        const clickedOutside = 
+        !menu.contains(event.target) &&
+        !burger.contains(event.target);
+
+
+
+        if(clickedOutside){
+
+
+            burger.classList.remove("active");
+
+            menu.classList.remove("active");
+
+
+        }
+
+
+    });
+
+
+}
+
+
+
+initMobileMenu();

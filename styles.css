@@ -197,7 +197,7 @@ h1 {
 
     font-size: var(--h1);
 
-    line-height: .92;
+    line-height: 1.1;
 
     letter-spacing: -5px;
 
@@ -225,7 +225,7 @@ h3 {
 
 }
 
-p {
+p, li {
 
     font-size: var(--body);
 
@@ -707,8 +707,6 @@ p {
 
 }
 
-/* Меняем порядок изображения и текста */
-
 .project-card.reverse {
 
     grid-template-columns: .85fr 1.15fr;
@@ -1041,12 +1039,18 @@ p {
 
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 32px;
 
     margin-top: 80px;
 
+}
+
+.graphic::before {
+    content: url(./assets/Vector14.svg);
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .process-step {
@@ -1657,7 +1661,8 @@ p {
 
 .hero-cover {
 
-    margin-bottom: 0;
+    margin-bottom: 80px;
+    padding: 0;
 
 }
 
@@ -1681,7 +1686,7 @@ p {
 
     gap: 28px;
 
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     justify-items: center;
     padding: 0;
 
@@ -1707,7 +1712,8 @@ p {
 
 .overview {
 
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+    padding: 160px;
 
 }
 
@@ -1725,7 +1731,8 @@ p {
 
 .challenge {
 
-    margin-bottom: 100px;
+    margin-bottom: 160px;
+    padding: 40px;
 
 }
 
@@ -1739,7 +1746,8 @@ p {
 
 .goals {
 
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+    padding: 40px;
 
 }
 
@@ -1749,9 +1757,25 @@ p {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 32px;
+    gap: 20px;
 
     margin-top: 72px;
+    margin-bottom: 160px;
+
+
+}
+
+.decision-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: 40px;
+
+    margin-top: 72px;
+    margin-bottom: 160px;
+
 
 }
 
@@ -1777,10 +1801,43 @@ p {
 
 }
 
-.goal-card h3 {
+.goal-card h3, .decision-card h3 {
 
     margin-bottom: 18px;
 
+}
+
+.decision-card {
+    display: flex;
+    flex-direction: row;
+gap: 120px;
+align-items: center;
+padding: 40px;
+
+
+    border-radius: 28px;
+
+    border: 1px solid var(--border);
+
+}
+
+.decision-card img {
+    background-size: cover;
+    max-width: 25%;
+}
+
+.decision-info {
+display: flex;
+flex-direction: column;
+padding: 40px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    border: 1px solid var(--border);
+
+    transition: var(--transition);
 }
 
 .case-image {
